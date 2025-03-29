@@ -1,0 +1,11 @@
+#ไฟล์นี้กำหนดรูปแบบการเข้าถึง การเรียกใช้ EndPoint
+Header set Access-Control-Allow-Origin "*"
+#กำหนด http method สำหรับ CRUD (Create, Read, Update, Delete)
+Header set Access-Control-Allow-Origin "GET, POST, PUT, DELETE"
+Header set Access-Control-Allow-Origin "Content-Type, Authorization"
+
+#Redirect all API requests
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/index.php?/$1 [QSA,L]
