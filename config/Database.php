@@ -1,7 +1,7 @@
 <?php
 class Database {
     private $host = "mysql-176c9461-chanintornchalermsuk-cbcc.e.aivencloud.com:28758";
-    private $db_name = "smart_fram_db";
+    private $db_name = "smart_farm_db";
     private $username = "avnadmin";
     private $password = "AVNS_iCVG_iD8oKPeiS2NKac";
     private $conn;

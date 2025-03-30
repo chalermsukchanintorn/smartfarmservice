@@ -42,9 +42,9 @@ class SensorController {
     private function sendResponseFromResult($result) {
         $num = $result->rowCount();
         if ($num > 0) {
-            $sensors_arr = array();
+            $sensors_arr = array("message" => "ok", "data" => array());
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                $sensors_arr[] = $row;
+                $sensors_arr["data"][] = $row;
             }
             Response::sendResponse(200, $sensors_arr);
         } else {
