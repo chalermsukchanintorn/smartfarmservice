@@ -1,0 +1,11 @@
+#กำหนดค่าการทำงานของ Apache web server
+#กำหนดส่วนของ HTTP Header
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Origin "GET, POST, PUT, DELETE"
+Header set Access-Control-Allow-Origin "Content-Type, Authorization"
+
+#กำหนดส่วนของ Rewrite Rule ของ Apache web server ผ่านไฟล์ .htaccess
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/index.php?/$1 [QSA,L]
